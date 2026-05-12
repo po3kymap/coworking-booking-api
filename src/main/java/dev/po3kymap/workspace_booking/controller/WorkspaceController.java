@@ -3,6 +3,7 @@ package dev.po3kymap.workspace_booking.controller;
 
 import dev.po3kymap.workspace_booking.entity.Workspace;
 import dev.po3kymap.workspace_booking.service.WorkspaceService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +22,7 @@ public class WorkspaceController {
     }
 
     @PostMapping
-    public Workspace create(@RequestBody Workspace workspace) {
+    public Workspace create(@Valid @RequestBody Workspace workspace) {
         return workspaceService.createWorkspace(workspace);
     }
 }
